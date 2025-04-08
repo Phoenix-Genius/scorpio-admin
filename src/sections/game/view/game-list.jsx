@@ -2,10 +2,9 @@
 
 import { useCallback, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import Switch from '@mui/material/Switch';
 
-import { Label } from 'src/components/label/label';
-import { Box, Button, Checkbox, FormControlLabel, MenuItem, TextField, Typography } from '@mui/material';
+import { Label } from 'src/components/label';
+import { Box, Button, Checkbox, FormControlLabel, MenuItem, Switch, TextField, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import { DashboardContent } from 'src/layouts/dashboard/content';
 import { PageTitle } from 'src/components/page-title/page-title';
@@ -33,7 +32,6 @@ const columns = [
   {
     field: 'name',
     headerName: 'Game Name',
-    type: 'number',
     width: 160,
     align: 'center',
     headerAlign: 'center',
@@ -41,7 +39,6 @@ const columns = [
   {
     field: 'symbol',
     headerName: 'Symbol',
-    type: 'number',
     width: 160,
     align: 'center',
     headerAlign: 'center',
@@ -49,7 +46,6 @@ const columns = [
   {
     field: 'category',
     headerName: 'Category',
-    type: 'string',
     width: 100,
     align: 'center',
     headerAlign: 'center',
@@ -60,7 +56,6 @@ const columns = [
     )
   },
   {
-    type:'boolean',
     field: 'use',
     align:'center',
     headerAlign: 'center',
@@ -72,7 +67,6 @@ const columns = [
   {
     field: 'state',
     headerName: 'State',
-    type: 'string',
     width: 200,
     align: 'center',
     headerAlign: 'center',
@@ -90,7 +84,6 @@ const columns = [
   {
     field: 'createdAt',
     headerName: 'CreatedDate',
-    type: 'number',
     width: 250,
     align: 'center',
     headerAlign: 'center',
@@ -144,25 +137,25 @@ export function GameList() {
       <PageTitle>Game List</PageTitle>
       <Block title="Search" footerAction={<Button fullWidth variant="contained" color="success">Search</Button>}>
         <Grid container sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
-          <Grid size={{ xs: 4 }} sx={{ display: "flex", alignItems: "center", borderRight: "1px solid #333", borderBottom: "1px solid #333", p: 2 }}>
+          <Grid size={4} sx={{ display: "flex", alignItems: "center", borderRight: "1px solid #333", borderBottom: "1px solid #333", p: 2 }}>
             <Typography variant="subtitle1">Provider</Typography>
           </Grid>
-          <Grid size={{ xs: 8 }} sx={{ p: 2, borderBottom: "1px solid #333" }}>
+          <Grid size={8} sx={{ p: 2, borderBottom: "1px solid #333" }}>
             <TextField fullWidth select value={provider} onChange={handleChangeProvider} size="small">
               <MenuItem key={-1} value="total">Total</MenuItem>
               {providers.map((item, index)=><MenuItem key={index} value={item}>{item}</MenuItem>)}
             </TextField>
           </Grid>
-          <Grid size={{ xs: 4 }} sx={{ display: "flex", alignItems: "center", borderRight: "1px solid #333", borderBottom: "1px solid #333", p: 2 }}>
+          <Grid size={4} sx={{ display: "flex", alignItems: "center", borderRight: "1px solid #333", borderBottom: "1px solid #333", p: 2 }}>
             <Typography variant="subtitle1">Game Name/Symbol</Typography>
           </Grid>
-          <Grid size={{ xs: 8 }} sx={{ p: 2, borderBottom: "1px solid #333" }}>
+          <Grid size={8} sx={{ p: 2, borderBottom: "1px solid #333" }}>
             <TextField fullWidth size="small" placeholder="Game Name/Symbol" />
           </Grid>
-          <Grid size={{ xs: 4 }} sx={{ display: "flex", alignItems: "center", borderRight: "1px solid #333", borderBottom: "1px solid #333", p: 2 }}>
+          <Grid size={4} sx={{ display: "flex", alignItems: "center", borderRight: "1px solid #333", borderBottom: "1px solid #333", p: 2 }}>
             <Typography variant="subtitle1">State</Typography>
           </Grid>
-          <Grid size={{ xs: 8 }} sx={{ p: 2, borderBottom: "1px solid #333" }}>
+          <Grid size={8} sx={{ p: 2, borderBottom: "1px solid #333" }}>
             <FormControlLabel
               label="Normal"
               control={
