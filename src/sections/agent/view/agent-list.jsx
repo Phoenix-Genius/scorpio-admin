@@ -25,7 +25,7 @@ const columns = [
     align: 'center',
     headerAlign: 'center',
     renderCell: params => (
-      <Box>
+      <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", height: 1 }}>
         <Typography variant="subtitle2">{params.row.agent.name}</Typography>
         <Typography variant="subtitle2" color="textDisabled">@{params.row.agent.loginId}</Typography>
       </Box>
@@ -38,7 +38,7 @@ const columns = [
     align: 'center',
     headerAlign: 'center',
     renderCell: params => (
-      <Box>
+      <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", height: 1 }}>
         <Typography variant="subtitle2">{params.row.parent.name}</Typography>
         <Typography variant="subtitle2" color="textDisabled">@{params.row.parent.loginId}</Typography>
       </Box>
@@ -63,7 +63,7 @@ const columns = [
     align: 'center',
     headerAlign: 'center',
     renderCell: params => (
-      <Box>
+      <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", height: 1 }}>
         <Typography>{params.row.pointRate}%</Typography>
         {/* <EditIcon /> */}
       </Box>
@@ -76,7 +76,7 @@ const columns = [
     align: 'center',
     headerAlign: 'center',
     renderCell: params => (
-      <Box>
+      <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", height: 1 }}>
         <Typography>{params.row.winRate}%</Typography>
         {/* <EditIcon /> */}
       </Box>
@@ -89,7 +89,7 @@ const columns = [
     align: 'center',
     headerAlign: 'center',
     renderCell: params => (
-      <Box>
+      <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", height: 1 }}>
         <Typography>{params.row.balance}</Typography>
         {/* <EditIcon /> */}
       </Box>
@@ -176,16 +176,16 @@ export function AgentList() {
         <PageTitle>Agents List</PageTitle>
         <Block title="Search" footerAction={<Button fullWidth variant="contained" color="success">Search</Button>}>
           <Grid container sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
-            <Grid size={{ xs: 4 }} sx={{ display: "flex", alignItems: "center", borderRight: "1px solid #333", borderBottom: "1px solid #333", p: 2 }}>
+            <Grid size={4} sx={{ display: "flex", alignItems: "center", borderRight: "1px solid #333", borderBottom: "1px solid #333", p: 2 }}>
               <Typography variant="subtitle1">Name</Typography>
             </Grid>
-            <Grid size={{ xs: 8 }} sx={{ p: 2, borderBottom: "1px solid #333" }}>
+            <Grid size={8} sx={{ p: 2, borderBottom: "1px solid #333" }}>
               <TextField fullWidth size="small" placeholder="Name" />
             </Grid>
-            <Grid size={{ xs: 4 }} sx={{ display: "flex", alignItems: "center", borderRight: "1px solid #333", borderBottom: "1px solid #333", p: 2 }}>
+            <Grid size={4} sx={{ display: "flex", alignItems: "center", borderRight: "1px solid #333", borderBottom: "1px solid #333", p: 2 }}>
               <Typography variant="subtitle1">Login id</Typography>
             </Grid>
-            <Grid size={{ xs: 8 }} sx={{ p: 2, borderBottom: "1px solid #333" }}>
+            <Grid size={8} sx={{ p: 2, borderBottom: "1px solid #333" }}>
               <TextField fullWidth size="small" placeholder="Login id" />
             </Grid>
           </Grid>
