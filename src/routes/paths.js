@@ -43,12 +43,44 @@ export const paths = {
   // DASHBOARD
   dashboard: {
     root: ROOTS.DASHBOARD,
-    two: `${ROOTS.DASHBOARD}/two`,
-    three: `${ROOTS.DASHBOARD}/three`,
-    group: {
-      root: `${ROOTS.DASHBOARD}/group`,
-      five: `${ROOTS.DASHBOARD}/group/five`,
-      six: `${ROOTS.DASHBOARD}/group/six`,
+    setting: `${ROOTS.DASHBOARD}/setting`,
+    agent: {
+      root: `${ROOTS.DASHBOARD}/agent`,
+      treeView: `${ROOTS.DASHBOARD}/agent/treeview`,
+      request: `${ROOTS.DASHBOARD}/agent/request`,
+      point: `${ROOTS.DASHBOARD}/agent/point`,
+    },
+    user: {
+      root: `${ROOTS.DASHBOARD}/user`,
+      transaction: `${ROOTS.DASHBOARD}/user/transaction`,
+      game: `${ROOTS.DASHBOARD}/user/game`,
+      gameConnection: `${ROOTS.DASHBOARD}/user/game-connection`,
+      bonusCall: `${ROOTS.DASHBOARD}/user/bonusCall`,
+    },
+    game: {
+      root: `${ROOTS.DASHBOARD}/game`,
+      provider: `${ROOTS.DASHBOARD}/game/provider`,
+      connectProviderToAgent: `${ROOTS.DASHBOARD}/game/connect-provider-to-agent`,
+      connectGameToAgent: `${ROOTS.DASHBOARD}/game/connect-game-to-agent`,
+    },
+    statistic: {
+      day: `${ROOTS.DASHBOARD}/statistic/stats-per-day`,
+      game: `${ROOTS.DASHBOARD}/statistic/stats-per-game`,
+      user: `${ROOTS.DASHBOARD}/statistic/stats-per-user`,
+    },
+    api: {
+      root: `${ROOTS.DASHBOARD}/api`,
+      seamless: `${ROOTS.DASHBOARD}/api/seamless`,
+      testing: `${ROOTS.DASHBOARD}/api/testing`,
+      testingLog: `${ROOTS.DASHBOARD}/api/testing-log`,
+      errorLog: `${ROOTS.DASHBOARD}/api/error-log`,
+    },
+    customerService: {
+      newNotice: `${ROOTS.DASHBOARD}/customer-service/new-notice`,
+      notice: `${ROOTS.DASHBOARD}/customer-service/notice`,
+      noticeReceived: `${ROOTS.DASHBOARD}/customer-service/notice-received`,
+      ticket: `${ROOTS.DASHBOARD}/customer-service/ticket`,
+      openTicket: `${ROOTS.DASHBOARD}/customer-service/open-ticket`,
     },
   },
 };
