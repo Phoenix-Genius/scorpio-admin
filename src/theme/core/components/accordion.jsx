@@ -13,8 +13,9 @@ const MuiAccordion = {
       backgroundColor: 'transparent',
       [`&.${accordionClasses.expanded}`]: {
         boxShadow: theme.vars.customShadows.z8,
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: theme.vars.palette.background.paper,
+        margin:0,
+        borderBottom: "1px solid",
+        borderColor: theme.vars.palette.divider
       },
       [`&.${accordionClasses.disabled}`]: { backgroundColor: 'transparent' },
     }),
@@ -31,6 +32,10 @@ const MuiAccordionSummary = {
     root: ({ theme }) => ({
       paddingLeft: theme.spacing(2),
       paddingRight: theme.spacing(1),
+      minHeight: "38px",
+      [`&.${accordionClasses.expanded}`]: {
+        minHeight: "38px"
+      },
       [`&.${accordionSummaryClasses.disabled}`]: {
         opacity: 1,
         color: theme.vars.palette.action.disabled,
@@ -38,6 +43,14 @@ const MuiAccordionSummary = {
       },
     }),
     expandIconWrapper: { color: 'inherit' },
+    content: ({ theme }) => ({
+      marginTop: theme.spacing(1),
+      marginBottom: theme.spacing(1),
+      [`&.${accordionClasses.expanded}`]: {
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(1)
+      }
+    })
   },
 };
 
