@@ -100,7 +100,7 @@ const columns = [
     headerName: 'Bonus Callable',
     align:'center',
     headerAlign: 'center',
-    width: 200,
+    width: 110,
     renderCell: params => <Switch checked={params.row.bonusCallable} />
   },
   {
@@ -170,7 +170,6 @@ const agents=[ {id:500000029,agent:{name:"beinbet",loginId:"beinbet1"},parent:{n
 {id:500000000,agent:{name:"Democ",loginId:"democ"},parent:{name:"heny_tryc",loginId:"heny_tryc"},level:"Operator",pointRate:4,winRate:91,balance:23414345.34,bonusCallable:false,state:"Approved",createdAt:"2025-02-03T03:09:22"}]
 
 export function AgentList() {
-
     return (
       <DashboardContent maxWidth="xl">
         <PageTitle>Agents List</PageTitle>
