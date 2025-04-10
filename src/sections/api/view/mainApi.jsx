@@ -1,20 +1,18 @@
-'use client';
+"use client"
 
 import { DashboardContent } from 'src/layouts/dashboard/content';
 import { PageTitle } from 'src/components/page-title/page-title';
-import { ApiOrder } from '../api-order';
-import { ApiExample } from '../api-example';
+import { Block } from 'src/components/block';
 
 // ----------------------------------------------------------------------
 
-export function ApiSeamless() {
+export function MainApi() {
   return (
     <DashboardContent maxWidth="xl">
-      <PageTitle>Agents List</PageTitle>
-
-      <ApiOrder />
-
-      <ApiExample />
+      <PageTitle>Main Api</PageTitle>
+      <Block title="Main API">
+        <img style={{ width: "100%" }} src="/assets/images/html.png" alt="logo" />
+      </Block>
     </DashboardContent>
-  );
+  )
 }
