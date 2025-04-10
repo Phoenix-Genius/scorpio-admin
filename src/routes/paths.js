@@ -44,6 +44,9 @@ export const paths = {
   dashboard: {
     root: ROOTS.DASHBOARD,
     setting: `${ROOTS.DASHBOARD}/setting`,
+    one: `${ROOTS.DASHBOARD}/one`,
+    two: `${ROOTS.DASHBOARD}/two`,
+    three: `${ROOTS.DASHBOARD}/three`,
     agent: {
       root: `${ROOTS.DASHBOARD}/agent`,
       treeView: `${ROOTS.DASHBOARD}/agent/treeview`,
@@ -64,6 +67,7 @@ export const paths = {
       connectGameToAgent: `${ROOTS.DASHBOARD}/game/connect-game-to-agent`,
     },
     statistic: {
+      root: `${ROOTS.DASHBOARD}/statistic`,
       day: `${ROOTS.DASHBOARD}/statistic/stats-per-day`,
       game: `${ROOTS.DASHBOARD}/statistic/stats-per-game`,
       user: `${ROOTS.DASHBOARD}/statistic/stats-per-user`,
@@ -76,6 +80,7 @@ export const paths = {
       errorLog: `${ROOTS.DASHBOARD}/api/error-log`,
     },
     customerService: {
+      root: `${ROOTS.DASHBOARD}/customer-service`,
       newNotice: `${ROOTS.DASHBOARD}/customer-service/new-notice`,
       notice: `${ROOTS.DASHBOARD}/customer-service/notice`,
       noticeReceived: `${ROOTS.DASHBOARD}/customer-service/notice-received`,

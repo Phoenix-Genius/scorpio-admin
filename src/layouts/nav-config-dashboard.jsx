@@ -1,57 +1,44 @@
 import { paths } from 'src/routes/paths';
 
-import { CONFIG } from 'src/global-config';
-
-import { SvgColor } from 'src/components/svg-color';
-
-// ----------------------------------------------------------------------
-
-const icon = (name) => <SvgColor src={`${CONFIG.assetsDir}/assets/icons/navbar/${name}.svg`} />;
-
-const ICONS = {
-  job: icon('ic-job'),
-  blog: icon('ic-blog'),
-  chat: icon('ic-chat'),
-  mail: icon('ic-mail'),
-  user: icon('ic-user'),
-  file: icon('ic-file'),
-  lock: icon('ic-lock'),
-  tour: icon('ic-tour'),
-  order: icon('ic-order'),
-  label: icon('ic-label'),
-  blank: icon('ic-blank'),
-  kanban: icon('ic-kanban'),
-  folder: icon('ic-folder'),
-  course: icon('ic-course'),
-  banking: icon('ic-banking'),
-  booking: icon('ic-booking'),
-  invoice: icon('ic-invoice'),
-  product: icon('ic-product'),
-  calendar: icon('ic-calendar'),
-  disabled: icon('ic-disabled'),
-  external: icon('ic-external'),
-  menuItem: icon('ic-menu-item'),
-  ecommerce: icon('ic-ecommerce'),
-  analytics: icon('ic-analytics'),
-  dashboard: icon('ic-dashboard'),
-  parameter: icon('ic-parameter'),
-};
-
 // ----------------------------------------------------------------------
 
 export const navData = [
   {
+    items: [
+      {
+        title: 'Setting',
+        path: paths.dashboard.setting,
+        icon: "icmn-cog"
+      }
+    ]
+  },
+  {
     subheader: 'SLOTCITY',
     items: [
       {
+        title: 'One',
+        path: paths.dashboard.one,
+        icon: "fa fa-bar-chart"
+      },
+      {
+        title: 'Two',
+        path: paths.dashboard.two,
+        icon: "fa fa-bar-chart"
+      },
+      {
+        title: 'Three',
+        path: paths.dashboard.three,
+        icon: "fa fa-bar-chart"
+      },
+      {
         title: 'Dashboard',
         path: paths.dashboard.root,
-        icon: ICONS.user
+        icon: "fa fa-bar-chart"
       },
       {
         title: 'Agent',
         path: paths.dashboard.agent.root,
-        icon: ICONS.user,
+        icon: "fa fa-sitemap",
         children: [
           { title: 'Agents Treeview', path: paths.dashboard.agent.treeView },
           { title: 'Agents List', path: paths.dashboard.agent.root },
@@ -62,7 +49,7 @@ export const navData = [
       {
         title: 'Users',
         path: paths.dashboard.user.root,
-        icon: ICONS.user,
+        icon: "fa fa-users",
         children: [
           { title: 'Users List', path: paths.dashboard.user.root },
           { title: 'Transaction History', path: paths.dashboard.user.transaction },
@@ -74,7 +61,7 @@ export const navData = [
       {
         title: 'Games',
         path: paths.dashboard.game.root,
-        icon: ICONS.user,
+        icon: "fa fa-gamepad",
         children: [
           { title: 'Providers List', path: paths.dashboard.game.provider },
           { title: 'Games List', path: paths.dashboard.game.root },
@@ -84,8 +71,8 @@ export const navData = [
       },
       {
         title: 'Statistics',
-        path: paths.dashboard.statistic.day,
-        icon: ICONS.user,
+        path: paths.dashboard.statistic.root,
+        icon: "fa fa-pie-chart",
         children: [
           { title: 'Stats Per Day', path: paths.dashboard.statistic.day },
           { title: 'Stats Per Game', path: paths.dashboard.statistic.game },
@@ -95,7 +82,7 @@ export const navData = [
       {
         title: 'API',
         path: paths.dashboard.api.root,
-        icon: ICONS.user,
+        icon: "icmn-hammer",
         children: [
           { title: 'Main API', path: paths.dashboard.api.root },
           { title: 'Callback API (Seamless)', path: paths.dashboard.api.seamless },
@@ -106,8 +93,8 @@ export const navData = [
       },
       {
         title: 'Customer Service',
-        path: paths.dashboard.customerService.newNotice,
-        icon: ICONS.user,
+        path: paths.dashboard.customerService.root,
+        icon: "fa fa-comment",
         children: [
           { title: 'Post New Notice', path: paths.dashboard.customerService.newNotice },
           { title: 'Notice Posting History', path: paths.dashboard.customerService.notice },

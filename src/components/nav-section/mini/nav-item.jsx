@@ -67,7 +67,7 @@ export const NavItem = forwardRef((props, ref) => {
     >
       {icon && (
         <ItemIcon {...ownerState} className={navSectionClasses.item.icon} sx={slotProps?.icon}>
-          {navItem.renderIcon}
+          <i className={navItem.renderIcon}></i>
         </ItemIcon>
       )}
 
@@ -165,6 +165,9 @@ const ItemRoot = styled(ButtonBase, { shouldForwardProp })(({ active, open, them
  */
 const ItemIcon = styled('span', { shouldForwardProp })(() => ({
   ...navItemStyles.icon,
+  [`& i`]:{
+    fontSize: 'var(--nav-icon-size)',
+  },
   width: 'var(--nav-icon-size)',
   height: 'var(--nav-icon-size)',
   margin: 'var(--nav-icon-root-margin)',

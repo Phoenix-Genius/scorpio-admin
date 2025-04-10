@@ -116,7 +116,7 @@ const _orderAccordions = [
                 • Please make testing step by step using&nbsp;<Link component={RouterLink} href={"/"} variant="subtitle2" color="#7ea6de" underline="always">the corresponding page</Link>.
             </ListItem>
             <ListItem>
-                • When testing the callback API, you do not need <span class="text-yellow">points</span> because of testing with virtual data.
+                • When testing the callback API, you do not need <span className="text-yellow">points</span> because of testing with virtual data.
             </ListItem>
             <ListItem>
                 • If you need test points, please request it after receiving agent approval.

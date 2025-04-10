@@ -8,25 +8,9 @@ import { PageTitle } from 'src/components/page-title/page-title';
 import { Block } from 'src/components/block';
 import { RichTreeView } from '@mui/x-tree-view/RichTreeView';
 import { AgentModal } from "src/components/agent-modal/agent-modal";
+import { _agent_tree } from "src/_mock";
 
 // ----------------------------------------------------------------------
-
-
-const MUI_X_PRODUCTS = [
-  {
-    id: 'grid',
-    label: '🅰henry_try(@henry_try)',
-    children: [
-      { id: 'grid-community', label: '🅰bluesoft(@bluesoft)' },
-      { id: 'grid-premium', label: '🅰DavidTRY(@david_try)', children: [{ id: "smart_try", label: '🅱SMART_TRY(@SMART_TRY)' }] },
-      { id: "demo", label: '🅰Demo(@demo)' },
-      { id: "laxhan", label: '🅰Laxhan(@laxhan)', children: [{ id: "", label: "" }] },
-      { id: "testtry", label: '🅰testTRY_NoDelete(@testTRY_NoDelete)' },
-      { id: "Tezcan", label: '🅰Tezcan(@tezcan)' },
-    ],
-  }
-];
-
 
 export function AgentTreeView() {
 
@@ -39,12 +23,12 @@ export function AgentTreeView() {
       <PageTitle>Agents Treeview </PageTitle>
 
       <Grid container>
-        <Grid size={6} pr={1}>
+        <Grid size={{ xs: 12, md: 6 }} pr={{ xs: 0, md: 1 }}>
           <Block title="Agents Treeview">
-            <RichTreeView items={MUI_X_PRODUCTS} sx={{ overflowX: 'hidden', minHeight: 240, width: 1 }} />
+            <RichTreeView items={_agent_tree} sx={{ overflowX: 'hidden', minHeight: 240, width: 1 }} />
           </Block >
         </Grid>
-        <Grid size={6} pl={1}>
+        <Grid size={{ xs: 12, md: 6 }} pl={{ xs: 0, md: 1 }}>
           <Block
             title="Agents Details(#50000000021)"
             footerAction={

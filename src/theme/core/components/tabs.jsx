@@ -43,7 +43,7 @@ const MuiTab = {
       fontWeight: theme.typography.fontWeightMedium,
       lineHeight: theme.typography.body2.lineHeight,
       [`&.${tabClasses.selected}`]: {
-        color: theme.vars.palette.text.primary,
+        color: theme.vars.palette.grey[900],
         fontWeight: theme.typography.fontWeightSemiBold,
       },
     }),

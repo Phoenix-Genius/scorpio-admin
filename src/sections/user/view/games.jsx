@@ -12,6 +12,7 @@ import { MobileDatePicker } from "@mui/x-date-pickers";
 import dayjs from 'dayjs';
 import { LocalizationProvider } from 'src/locales';
 import { formatNumber } from "src/utils/format-number";
+import { _user_games } from "src/_mock";
 
 // ----------------------------------------------------------------------
 
@@ -124,14 +125,6 @@ const columns = [
 const agents = ["@baalbet", "CQ9", "Habanero", "JiLi", "DreamGaming", "Asia Gaming"];
 const providers = ["Total", "CQ9", "Habanero", "JiLi", "DreamGaming", "Asia Gaming"];
 
-const gameHistory = [
-  { id: 1, user: "1277870", parent: { name: "sub_partner2", loginId: "subpartner2" }, provider: "pragmatic play", gameName: "Lusky's Wild Pub", betting: 0.25, win: 0.5, bonusCall: 0, startTime: "2025-01-09T00:47:37", endTime: "2025-01-09T00:47:37" },
-  { id: 2, user: "1277870", parent: { name: "sub_partner2", loginId: "subpartner2" }, provider: "CQ9", gameName: "Big Bass Dice", betting: 0.25, win: 0.5, bonusCall: 0, startTime: "2025-01-09T00:47:37", endTime: "2025-01-09T00:47:37" },
-  { id: 3, user: "1277870", parent: { name: "sub_partner2", loginId: "subpartner2" }, provider: "Pocket Games Soft", gameName: "The Dog House", betting: 0.25, win: 0.5, bonusCall: 0, startTime: "2025-01-09T00:47:37", endTime: "2025-01-09T00:47:37" },
-  { id: 4, user: "1277870", parent: { name: "sub_partner2", loginId: "subpartner2" }, provider: "Booongo", gameName: "Wild Wild Jocker", betting: 0.25, win: 0.5, bonusCall: 0, startTime: "2025-01-09T00:47:37", endTime: "2025-01-09T00:47:37" },
-  { id: 5, user: "1277870", parent: { name: "sub_partner2", loginId: "subpartner2" }, provider: "CQ9", gameName: "Lusky's Wild Pub", betting: 0.25, win: 0.5, bonusCall: 0, startTime: "2025-01-09T00:47:37", endTime: "2025-01-09T00:47:37" }
-]
-
 export function Games() {
   const [startValue, setStartValue] = useState(dayjs(new Date()));
   const [endValue, setEndValue] = useState(dayjs(new Date()));
@@ -210,9 +203,9 @@ export function Games() {
         </Grid>
       </Block>
 
-      <Block title={`Game History (Total ${gameHistory.length})`}>
+      <Block title={`Game History (Total ${_user_games.length})`}>
         <DataGrid
-          rows={gameHistory}
+          rows={_user_games}
           columns={columns}
           initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
           pageSizeOptions={[5, 10, 20]}

@@ -12,6 +12,7 @@ import { MobileDatePicker } from "@mui/x-date-pickers";
 import dayjs from 'dayjs';
 import { LocalizationProvider } from 'src/locales';
 import { formatNumber } from "src/utils/format-number";
+import { _statistic_day } from "src/_mock";
 
 // ----------------------------------------------------------------------
 
@@ -131,40 +132,6 @@ const columns = [
   },
 ];
 
-const statsPerDay = [
-  { id: 1, date: "2025-03-12", betting: { prev: 475, curr: 454 }, win: { prev: 7875, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 2, date: "2025-03-15", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 3, date: "2025-03-16", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 4, date: "2025-03-17", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 5, date: "2025-03-18", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 6, date: "2025-03-19", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 7, date: "2025-03-20", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 8, date: "2025-03-21", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 9, date: "2025-03-22", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 10, date: "2025-03-23", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 11, date: "2025-03-24", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 12, date: "2025-03-25", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 13, date: "2025-03-26", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 14, date: "2025-03-27", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 15, date: "2025-03-28", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 16, date: "2025-03-29", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 17, date: "2025-03-30", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 18, date: "2025-03-32", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 19, date: "2025-04-01", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 20, date: "2025-04-02", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 21, date: "2025-04-03", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 22, date: "2025-04-04", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 23, date: "2025-04-05", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 24, date: "2025-04-06", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 25, date: "2025-04-07", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 26, date: "2025-04-08", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 27, date: "2025-04-09", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 28, date: "2025-04-10", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 29, date: "2025-04-11", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 30, date: "2025-04-12", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 },
-  { id: 31, date: "2025-04-13", betting: { prev: 1230, curr: 41 }, win: { prev: 1230, curr: 41 }, profit: { prev: 1230, curr: 41 }, bonusCall: 0, subBetting: { prev: 0, curr: 41 }, subWin: { prev: 0, curr: 0 }, subProfit: { prev: 0, curr: 0 }, subBonusCall: 26 }
-]
-
 const providers = ["@baalbet", "CQ9", "Habanero", "JiLi", "DreamGaming", "Asia Gaming"];
 
 
@@ -222,9 +189,9 @@ export function StatisticsPerDay() {
         </Grid>
       </Block>
 
-      <Block title={`Stats Per Day (Total:${statsPerDay.length})`}>
+      <Block title={`Stats Per Day (Total:${_statistic_day.length})`}>
         <DataGrid
-          rows={statsPerDay}
+          rows={_statistic_day}
           columns={columns}
           initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
           pageSizeOptions={[5, 10, 20]}

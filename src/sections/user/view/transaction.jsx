@@ -12,6 +12,7 @@ import { DashboardContent } from 'src/layouts/dashboard/content';
 import { PageTitle } from 'src/components/page-title/page-title';
 import { Block } from 'src/components/block';
 import { formatNumber } from 'src/utils/format-number';
+import { _user_transactions } from 'src/_mock';
 
 // ----------------------------------------------------------------------
 
@@ -124,37 +125,6 @@ const columns = [
   },
 ];
 
-const receivedData = [
-  { id: 1, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 2, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: false, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 3, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 4, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 5, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 6, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: false, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 7, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 8, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 9, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 10, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: false, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 11, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 12, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 13, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 14, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 15, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 16, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: false, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 17, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 18, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: false, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 19, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 20, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 21, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 22, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: false, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 23, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 24, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 25, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: false, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 26, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 27, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: false, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 28, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: true, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-  { id: 29, username: { name: "henry_try", loginId: "henry_try1" }, round: 543523485283457435, provider: "Pragmatic Play", gameName: "Gates of Olympus", type: false, amount: 2.4, prebalance: 279.45, currentbalance: 276.45, deliveryDate: "2025-03-04T19:07:29", functions: "asdf" }]
-
 export function UserTransaction() {
   const [provider, setProvider] = useState("henry_try(@henry_try)")
 
@@ -175,7 +145,7 @@ export function UserTransaction() {
           <Grid size={{ xs: 8 }} sx={{ p: 2, borderBottom: "1px solid #333" }}>
             <TextField fullWidth select value={provider} size="small">
               <MenuItem key={-1} value="henry_try(@henry_try)">henry_try(@henry_try)</MenuItem>
-              {/* {receivedData.map((item, index)=><MenuItem key={index} value={item.username.name}>{item.username.name}</MenuItem>)} */}
+              {/* {_user_transactions.map((item, index)=><MenuItem key={index} value={item.username.name}>{item.username.name}</MenuItem>)} */}
             </TextField>
           </Grid>
         </Grid>
@@ -248,7 +218,8 @@ export function UserTransaction() {
                 'aria-label': 'Checked checkbox',
               }}
             />
-            <Typography variant="subtitle1">Deposit</Typography>              <Checkbox
+            <Typography variant="subtitle1">Deposit</Typography>
+            <Checkbox
               size="medium"
               defaultChecked
               inputProps={{
@@ -256,14 +227,16 @@ export function UserTransaction() {
                 'aria-label': 'Checked checkbox',
               }}
             />
-            <Typography variant="subtitle1">WidthDraw</Typography>              <Checkbox
+            <Typography variant="subtitle1">WidthDraw</Typography>
+            <Checkbox
               size="medium"
               inputProps={{
                 id: 'checked-checkbox',
                 'aria-label': 'Checked checkbox',
               }}
             />
-            <Typography variant="subtitle1">BetCancel</Typography>              <Checkbox
+            <Typography variant="subtitle1">BetCancel</Typography>
+            <Checkbox
               size="medium"
               inputProps={{
                 id: 'checked-checkbox',
@@ -275,9 +248,9 @@ export function UserTransaction() {
         </Grid>
       </Block>
 
-      <Block title={`Transaction HIstory (Total ${receivedData.length})`}>
+      <Block title={`Transaction HIstory (Total ${_user_transactions.length})`}>
         <DataGrid
-          rows={receivedData}
+          rows={_user_transactions}
           columns={columns}
           initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
           pageSizeOptions={[5, 10, 20]}

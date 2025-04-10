@@ -15,7 +15,6 @@ import MenuItem from '@mui/material/MenuItem';
 
 import { useRouter } from 'src/routes/hooks';
 
-import { Iconify } from 'src/components/iconify';
 import { Form, Field } from 'src/components/hook-form';
 
 import { useAuthContext } from '../../hooks';
@@ -23,6 +22,7 @@ import { getErrorMessage } from '../../utils';
 import { FormHead } from '../../components/form-head';
 import { signInWithPassword } from '../../context/jwt';
 import { FlagIcon } from 'src/components/flag-icon';
+import { CONFIG } from 'src/global-config';
 
 // ----------------------------------------------------------------------
 
@@ -87,7 +87,19 @@ export function JwtSignInView() {
 
   const renderForm = () => (
     <Box sx={{ gap: 3, display: 'flex', flexDirection: 'column' }}>
-      <Field.Text name="username" slotProps={{ inputLabel: { shrink: true } }} />
+      <Field.Text
+        name="username"
+        slotProps={{
+          inputLabel: { shrink: true },
+          input: {
+            startAdornment: (
+              <InputAdornment position="start">
+                <i className="fa fa-user"></i>
+              </InputAdornment>
+            )
+          },
+        }}
+      />
 
       <Field.Text
         name="password"
@@ -96,12 +108,15 @@ export function JwtSignInView() {
         slotProps={{
           inputLabel: { shrink: true },
           input: {
+            startAdornment: (
+              <InputAdornment position="start">
+                <i className="fa fa-lock"></i>
+              </InputAdornment>
+            ),
             endAdornment: (
               <InputAdornment position="end">
                 <IconButton onClick={showPassword.onToggle} edge="end">
-                  <Iconify
-                    icon={showPassword.value ? 'solar:eye-bold' : 'solar:eye-closed-bold'}
-                  />
+                  <i className={`fa fa-eye${showPassword.value ? '-slash' : ''}`}></i>
                 </IconButton>
               </InputAdornment>
             ),
@@ -125,6 +140,11 @@ export function JwtSignInView() {
         variant="contained"
         loading={isSubmitting}
         loadingIndicator="Login..."
+        onClick={(e) => {
+          e.preventDefault()
+          router.push(CONFIG.auth.redirectPath)
+        }
+        }
       >
         LOGIN
       </LoadingButton>

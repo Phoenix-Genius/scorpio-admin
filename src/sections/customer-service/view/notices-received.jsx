@@ -7,6 +7,7 @@ import { Label } from 'src/components/label';
 import { DashboardContent } from 'src/layouts/dashboard/content';
 import { PageTitle } from 'src/components/page-title/page-title';
 import { Block } from 'src/components/block';
+import { _service_received_notices } from "src/_mock";
 
 // ----------------------------------------------------------------------
 
@@ -90,37 +91,6 @@ const columns = [
   },
 ];
 
-const receivedData = [{ id: 1, sender: { name: "beinbet", loginId: "beinbet1" }, type: 'Normal', title: "The inspection was terminated early", state: "Confirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 1, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 2, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "Server transfer operation completed", state: "Confirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 3, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "Server transfering", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 4, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 5, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "Server transfering", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 6, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 7, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "Server transfer operation completed", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 8, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Confirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 9, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 10, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 11, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "Server transfer operation completed", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 12, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Confirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 13, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "Server transfer operation completed", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 14, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "Server transfering", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 15, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 16, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Confirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 17, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "Server transfering", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 18, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 19, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "Server transfer operation completed", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 20, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Confirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 21, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "Server transfering", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 22, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "Server transfering", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 23, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 24, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 25, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "Server transfer operation completed", state: "Confirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 26, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Confirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 27, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 28, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Confirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" },
-{ id: 29, sender: { name: "henry_try", loginId: "henry_try1" }, type: 'Normal', title: "The inspection was terminated early", state: "Unconfirmed", deliveryDate: "2025-03-04T19:07:29", functions: "asdf" }]
-
 export function NoticesReceived() {
   return (
     <DashboardContent maxWidth="xl">
@@ -136,9 +106,9 @@ export function NoticesReceived() {
         </Grid>
       </Block>
 
-      <Block title={`Notices Received (Total ${receivedData.length})`}>
+      <Block title={`Notices Received (Total ${_service_received_notices.length})`}>
         <DataGrid
-          rows={receivedData}
+          rows={_service_received_notices}
           columns={columns}
           initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
           pageSizeOptions={[5, 10, 20]}

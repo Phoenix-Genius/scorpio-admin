@@ -28,11 +28,13 @@ import { LayoutSection } from '../core/layout-section';
 import { AccountDrawer } from '../components/account-drawer';
 import { SettingsButton } from '../components/settings-button';
 import { LanguagePopover } from '../components/language-popover';
+import { CurrencyPopover } from '../components/currency-popover';
 import { ContactsPopover } from '../components/contacts-popover';
 import { WorkspacesPopover } from '../components/workspaces-popover';
 import { navData as dashboardNavData } from '../nav-config-dashboard';
 import { dashboardLayoutVars, dashboardNavColorVars } from './css-vars';
 import { NotificationsDrawer } from '../components/notifications-drawer';
+import { Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -98,35 +100,28 @@ export function DashboardLayout({ sx, cssVars, children, slotProps, layoutQuery 
           {isNavHorizontal && (
             <VerticalDivider sx={{ [theme.breakpoints.up(layoutQuery)]: { display: 'flex' } }} />
           )}
-
-          {/** @slot Workspace popover */}
-          <WorkspacesPopover
-            data={_workspaces}
-            sx={{ color: 'var(--layout-nav-text-primary-color)' }}
-          />
         </>
       ),
       rightArea: (
         <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 0, sm: 0.75 } }}>
-          {/** @slot Searchbar */}
-          <Searchbar data={navData} />
+          {/** @slot Currency popover */}
+          <CurrencyPopover data={[
+            { id: 1, value: '99,474,990,000', currency: 'TRY', unit: <i className="fa fa-try"></i> },
+            { id: 2, value: '15,215,215,000', currency: 'USD', unit: '$' },
+            { id: 3, value: '15,215,215,000', currency: 'EUR', unit: '€' },
+            { id: 4, value: '15,215,215,000', currency: 'GBP', unit: '£' }
+          ]} />
+
+          {/** @slot Notifications popover */}
+          <NotificationsDrawer data={_notifications} />
 
           {/** @slot Language popover */}
           <LanguagePopover
             data={[
               { value: 'en', label: 'English', countryCode: 'GB' },
-              { value: 'fr', label: 'French', countryCode: 'FR' },
-              { value: 'vi', label: 'Vietnamese', countryCode: 'VN' },
-              { value: 'cn', label: 'Chinese', countryCode: 'CN' },
-              { value: 'ar', label: 'Arabic', countryCode: 'SA' },
+              { value: 'tr', label: 'Turkish', countryCode: 'TR' }
             ]}
           />
-
-          {/** @slot Notifications popover */}
-          <NotificationsDrawer data={_notifications} />
-
-          {/** @slot Contacts popover */}
-          <ContactsPopover data={_contacts} />
 
           {/** @slot Settings button */}
           <SettingsButton />
@@ -164,7 +159,7 @@ export function DashboardLayout({ sx, cssVars, children, slotProps, layoutQuery 
     />
   );
 
-  const renderFooter = () => null;
+  const renderFooter = () => <Box sx={{ p: 2, borderTop: "1px solid rgba(255,255,255,.2)" }}><Typography variant="subtitle2">Copyright &copy; SLOTCITY Admin Corp. All Rights Reserved.</Typography></Box>;
 
   const renderMain = () => <MainSection {...slotProps?.main}>{children}</MainSection>;
 

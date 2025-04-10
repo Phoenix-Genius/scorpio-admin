@@ -10,6 +10,7 @@ import Grid from '@mui/material/Grid2';
 import { DashboardContent } from 'src/layouts/dashboard/content';
 import { PageTitle } from 'src/components/page-title/page-title';
 import { Block } from 'src/components/block';
+import { _game_providers } from 'src/_mock';
 
 // ----------------------------------------------------------------------
 
@@ -49,37 +50,6 @@ const columns = [
   }
 ];
 
-const Games = [
-  { id: 1, logo: "1.webp", provider: "pragmatic play", state: "Normal" },
-  { id: 2, logo: "2.webp", provider: "CQ9", state: "Normal" },
-  { id: 3, logo: "3.webp", provider: "Pocket Games Soft", state: "On Maintenance" },
-  { id: 4, logo: "4.webp", provider: "Booongo", state: "On Maintenance" },
-  { id: 5, logo: "5.webp", provider: "CQ9", state: "Normal" },
-  { id: 6, logo: "6.webp", provider: "Play Soon", state: "On Maintenance" },
-  { id: 7, logo: "7.webp", provider: "Asia Gaming", state: "On Maintenance" },
-  { id: 8, logo: "8.webp", provider: "pragmatic play", state: "Normal" },
-  { id: 9, logo: "9.webp", provider: "DreamingGaming", state: "Normal" },
-  { id: 10, logo: "10.webp", provider: "Booongo", state: "On Maintenance" },
-  { id: 11, logo: "11.webp", provider: "jiLi", state: "On Maintenance" },
-  { id: 12, logo: "12.webp", provider: "Pocket Games Soft", state: "On Maintenance" },
-  { id: 13, logo: "1.webp", provider: "pragmatic play", state: "On Maintenance" },
-  { id: 14, logo: "2.webp", provider: "DreamingGaming", state: "On Maintenance" },
-  { id: 15, logo: "3.webp", provider: "pragmatic play", state: "On Maintenance" },
-  { id: 16, logo: "4.webp", provider: "Pocket Games Soft", state: "On Maintenance" },
-  { id: 17, logo: "5.webp", provider: "Asia Gaming", state: "On Maintenance" },
-  { id: 18, logo: "6.webp", provider: "Booongo", state: "Normal" },
-  { id: 19, logo: "7.webp", provider: "pragmatic play", state: "On Maintenance" },
-  { id: 20, logo: "8.webp", provider: "Pocket Games Soft", state: "On Maintenance" },
-  { id: 21, logo: "9.webp", provider: "CQ9", state: "Normal" },
-  { id: 22, logo: "10.webp", provider: "pragmatic play", state: "Normal" },
-  { id: 23, logo: "11.webp", provider: "Booongo", state: "Normal" },
-  { id: 24, logo: "12.webp", provider: "pragmatic play", state: "Normal" },
-  { id: 25, logo: "1.webp", provider: "Pocket Games Soft", state: "Normal" },
-  { id: 26, logo: "2.webp", provider: "jiLi", state: "On Maintenance" },
-  { id: 27, logo: "3.webp", provider: "DreamingGaming", state: "Normal" },
-  { id: 28, logo: "4.webp", provider: "Play Soon", state: "Normal" },
-  { id: 29, logo: "5.webp", provider: "Asia Gaming", state: "Normal" }
-]
 const MUI_X_PRODUCTS = [
   {
     id: 'grid',
@@ -134,7 +104,7 @@ export function ConnectProviderToAgent() {
     <DashboardContent maxWidth="xl">
       <PageTitle>Connect Providers To Agents</PageTitle>
       <Grid container>
-        <Grid size={6} pr={2}>
+        <Grid size={{ xs: 12, md: 6 }} pr={{ xs: 0, md: 2 }}>
           <Block title="Select an Agent" footerAction={<Button fullWidth variant="contained" color="success">Search</Button>}>
             <Grid container sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
               <Grid size={4} sx={{ display: "flex", alignItems: "center", borderRight: "1px solid #333", borderBottom: "1px solid #333", p: 2 }}>
@@ -179,13 +149,13 @@ export function ConnectProviderToAgent() {
             <RichTreeView checkboxSelection items={MUI_X_PRODUCTS} sx={{ fontSize: 20 }} />
           </Block>
         </Grid>
-        <Grid size={6} pr={2}>
+        <Grid size={{ xs: 12, md: 6 }} pl={{ xs: 0, md: 2 }}>
           <Block
-            title={`Providers List(Total:${Games.length})`}
+            title={`Providers List(Total:${_game_providers.length})`}
           >
             <DataGrid
               checkboxSelection
-              rows={Games}
+              rows={_game_providers}
               columns={columns}
               initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
               pageSizeOptions={[5, 10, 20]}

@@ -7,6 +7,7 @@ import { Alert, Box, Button, Typography } from '@mui/material';
 import { DashboardContent } from 'src/layouts/dashboard/content';
 import { PageTitle } from 'src/components/page-title/page-title';
 import { Block } from 'src/components/block';
+import { _game_providers } from 'src/_mock';
 
 // ----------------------------------------------------------------------
 
@@ -54,44 +55,12 @@ const columns = [
   },
 ];
 
-const Games = [
-  { id: 1, logo: "1.webp", provider: "pragmatic play", state: "Normal", functions: true },
-  { id: 2, logo: "2.webp", provider: "CQ9", state: "Normal", functions: true },
-  { id: 3, logo: "3.webp", provider: "Pocket Games Soft", state: "On Maintenance", functions: false },
-  { id: 4, logo: "4.webp", provider: "Booongo", state: "On Maintenance", functions: false },
-  { id: 5, logo: "5.webp", provider: "CQ9", state: "Normal", functions: true },
-  { id: 6, logo: "6.webp", provider: "Play Soon", state: "On Maintenance", functions: false },
-  { id: 7, logo: "7.webp", provider: "Asia Gaming", state: "On Maintenance", functions: true },
-  { id: 8, logo: "8.webp", provider: "pragmatic play", state: "Normal", functions: true },
-  { id: 9, logo: "9.webp", provider: "DreamingGaming", state: "Normal", functions: false },
-  { id: 10, logo: "10.webp", provider: "Booongo", state: "On Maintenance", functions: true },
-  { id: 11, logo: "11.webp", provider: "jiLi", state: "On Maintenance", functions: true },
-  { id: 12, logo: "12.webp", provider: "Pocket Games Soft", state: "On Maintenance", functions: true },
-  { id: 13, logo: "1.webp", provider: "pragmatic play", state: "On Maintenance", functions: true },
-  { id: 14, logo: "2.webp", provider: "DreamingGaming", state: "On Maintenance", functions: false },
-  { id: 15, logo: "3.webp", provider: "pragmatic play", state: "On Maintenance", functions: true },
-  { id: 16, logo: "4.webp", provider: "Pocket Games Soft", state: "On Maintenance", functions: true },
-  { id: 17, logo: "5.webp", provider: "Asia Gaming", state: "On Maintenance", functions: true },
-  { id: 18, logo: "6.webp", provider: "Booongo", state: "Normal", functions: false },
-  { id: 19, logo: "7.webp", provider: "pragmatic play", state: "On Maintenance", functions: false },
-  { id: 20, logo: "8.webp", provider: "Pocket Games Soft", state: "On Maintenance", functions: true },
-  { id: 21, logo: "9.webp", provider: "CQ9", state: "Normal", functions: true },
-  { id: 22, logo: "10.webp", provider: "pragmatic play", state: "Normal", functions: true },
-  { id: 23, logo: "11.webp", provider: "Booongo", state: "Normal", functions: true },
-  { id: 24, logo: "12.webp", provider: "pragmatic play", state: "Normal", functions: true },
-  { id: 25, logo: "1.webp", provider: "Pocket Games Soft", state: "Normal", functions: false },
-  { id: 26, logo: "2.webp", provider: "jiLi", state: "On Maintenance", functions: true },
-  { id: 27, logo: "3.webp", provider: "DreamingGaming", state: "Normal", functions: false },
-  { id: 28, logo: "4.webp", provider: "Play Soon", state: "Normal", functions: true },
-  { id: 29, logo: "5.webp", provider: "Asia Gaming", state: "Normal", functions: false }
-]
-
 export function ProviderList() {
   return (
     <DashboardContent maxWidth="xl">
       <PageTitle>Providers List</PageTitle>
       <Block
-        title={`Providers List (Total:${Games.length})`}
+        title={`Providers List (Total:${_game_providers.length})`}
       >
         <Box sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
           <Alert sx={{ borderRadius: 0, backgroundColor: "#b3b3b3", color: "black" }} icon={<i className="icmn-checkmark" style={{ color: "black" }}></i>}>
@@ -100,7 +69,7 @@ export function ProviderList() {
         </Box>
 
         <DataGrid
-          rows={Games}
+          rows={_game_providers}
           columns={columns}
           initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
           pageSizeOptions={[5, 10, 20]}

@@ -8,6 +8,7 @@ import { DashboardContent } from 'src/layouts/dashboard/content';
 import { PageTitle } from 'src/components/page-title/page-title';
 import { Block } from 'src/components/block';
 import { formatNumber } from "src/utils/format-number";
+import { _user_game_connections } from "src/_mock";
 
 // ----------------------------------------------------------------------
 
@@ -168,14 +169,6 @@ const columns = [
   },
 ];
 
-const gameConnections = [
-  { id: 1, user: { name: "1277870", loginId: "400634252" }, parent: { name: "sub_partner2", loginId: "subpartner2" }, provider: "pragmatic play", name: "Lusky's Wild Pub", symbol: "vs10bbdice", category: "Slots", roundBet: 0.25, totalBet: 0.5, totalWin: 0, profit: "-0.5", startTime: "2025-01-09T00:47:37", callAmount: 0, callState: "" },
-  { id: 2, user: { name: "1277870", loginId: "400634252" }, parent: { name: "sub_partner2", loginId: "subpartner2" }, provider: "CQ9", name: "Big Bass Dice", symbol: "vs25luckwikdpb", category: "Slots", roundBet: 0.25, totalBet: 0.5, totalWin: 0, profit: "-0.5", startTime: "2025-01-09T00:47:37", callAmount: 0, callState: "" },
-  { id: 3, user: { name: "1277870", loginId: "400634252" }, parent: { name: "sub_partner2", loginId: "subpartner2" }, provider: "Pocket Games Soft", name: "The Dog House", symbol: "vs10bbdice", category: "Slots", roundBet: 0.25, totalBet: 0.5, totalWin: 0, profit: "-0.5", startTime: "2025-01-09T00:47:37", callAmount: 0, callState: "" },
-  { id: 4, user: { name: "1277870", loginId: "400634252" }, parent: { name: "sub_partner2", loginId: "subpartner2" }, provider: "Booongo", name: "Wild Wild Jocker", symbol: "vssefgergth", category: "Slots", roundBet: 0.25, totalBet: 0.5, totalWin: 0, profit: "-0.5", startTime: "2025-01-09T00:47:37", callAmount: 0, callState: "" },
-  { id: 5, user: { name: "1277870", loginId: "400634252" }, parent: { name: "sub_partner2", loginId: "subpartner2" }, provider: "CQ9", name: "Lusky's Wild Pub", symbol: "vs1tkyjftjyj", category: "Slots", roundBet: 0.25, totalBet: 0.5, totalWin: 0, profit: "-0.5", startTime: "2025-01-09T00:47:37", callAmount: 0, callState: "" }
-]
-
 export function GameConnections() {
 
   return (
@@ -231,14 +224,14 @@ export function GameConnections() {
         </Grid>
       </Block>
 
-      <Block title={`Game Connections (${gameConnections.length} / ${gameConnections.length})`}>
+      <Block title={`Game Connections (${_user_game_connections.length} / ${_user_game_connections.length})`}>
         <Box sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
           <Alert sx={{ borderRadius: 0, backgroundColor: "#b3b3b3", color: "black" }} icon={<i className="icmn-checkmark" style={{ color: "black" }}></i>}>
             Data is automatically updated every 10 seconds.
           </Alert>
         </Box>
         <DataGrid
-          rows={gameConnections}
+          rows={_user_game_connections}
           columns={columns}
           initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
           pageSizeOptions={[5, 10, 20]}

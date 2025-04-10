@@ -88,7 +88,7 @@ export function PostNewNotice() {
       <PageTitle>Post New Notice</PageTitle>
 
       <Grid container >
-        <Grid size={5} pr={2}>
+        <Grid size={{ xs: 12, md: 5 }} pr={{ xs: 0, md: 2 }}>
           <Block title="Select an agent" footerAction={<Button fullWidth variant="contained" color="success">Search</ Button>}>
             <Grid container sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
               <Grid size={4} sx={{ display: "flex", alignItems: "center", borderRight: "1px solid #333", borderBottom: "1px solid #333", p: 2 }}>
@@ -127,7 +127,7 @@ export function PostNewNotice() {
             />
           </Block>
         </Grid>
-        <Grid size={7} pl={2}>
+        <Grid size={{ xs: 12, md: 7 }} pl={{ xs: 0, md: 2 }}>
           <Block
             title="Post new Notice"
             headerAction={

@@ -7,6 +7,7 @@ import { Label } from 'src/components/label';
 import { DashboardContent } from 'src/layouts/dashboard/content';
 import { PageTitle } from 'src/components/page-title/page-title';
 import { Block } from 'src/components/block';
+import { _service_notices } from "src/_mock";
 
 // ----------------------------------------------------------------------
 
@@ -17,7 +18,8 @@ const columns = [
     headerName: '',
     align: 'center',
     headerAlign: 'center',
-    renderCell: params => `${params.row.id}` },
+    renderCell: params => `${params.row.id}`
+  },
   {
     field: 'sender',
     width: 250,
@@ -56,8 +58,8 @@ const columns = [
     width: 200,
     align: 'center',
     headerAlign: 'center',
-    renderCell: params => 
-      params.row.state=="Confirmed"? (
+    renderCell: params =>
+      params.row.state == "Confirmed" ? (
         <Label color="info" variant="filled">
           {params.row.state}
         </Label>
@@ -85,31 +87,30 @@ const columns = [
   },
 ];
 
-const history=[]
 export function NoticePostingHistory() {
 
-    return (
-      <DashboardContent maxWidth="xl">
-        <PageTitle>Notices Received</PageTitle>
-        <Block title="Search" footerAction={<Button fullWidth variant="contained" color="success">Search</Button>}>
-          <Grid container sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
-            <Grid size={{ xs: 4 }} sx={{ display: "flex", alignItems: "center", borderRight: "1px solid #333", borderBottom: "1px solid #333", p: 2 }}>
-              <Typography variant="subtitle1">Title</Typography>
-            </Grid>
-            <Grid size={{ xs: 8 }} sx={{ p: 2, borderBottom: "1px solid #333" }}>
-              <TextField fullWidth size="small" placeholder="Title" />
-            </Grid>
+  return (
+    <DashboardContent maxWidth="xl">
+      <PageTitle>Notices Received</PageTitle>
+      <Block title="Search" footerAction={<Button fullWidth variant="contained" color="success">Search</Button>}>
+        <Grid container sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
+          <Grid size={{ xs: 4 }} sx={{ display: "flex", alignItems: "center", borderRight: "1px solid #333", borderBottom: "1px solid #333", p: 2 }}>
+            <Typography variant="subtitle1">Title</Typography>
           </Grid>
-        </Block>
-        
-        <Block title={`Notice Posting History (Total ${history.length})`}>
-          <DataGrid
-            rows={history}
-            columns={columns}
-            initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
-            pageSizeOptions={[5, 10, 20]}
-          />
-        </Block>
-      </DashboardContent>
-    ) 
+          <Grid size={{ xs: 8 }} sx={{ p: 2, borderBottom: "1px solid #333" }}>
+            <TextField fullWidth size="small" placeholder="Title" />
+          </Grid>
+        </Grid>
+      </Block>
+
+      <Block title={`Notice Posting History (Total ${_service_notices.length})`}>
+        <DataGrid
+          rows={_service_notices}
+          columns={columns}
+          initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
+          pageSizeOptions={[5, 10, 20]}
+        />
+      </Block>
+    </DashboardContent>
+  )
 }

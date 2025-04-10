@@ -30,7 +30,7 @@ export const themeConfig = {
     secondary: {
       lighter: '#EFD6FF',
       light: '#C684FF',
-      main: '#8E33FF',
+      main: '#9c6aff',
       dark: '#5119B7',
       darker: '#27097A',
       contrastText: '#FFFFFF',
@@ -38,7 +38,7 @@ export const themeConfig = {
     info: {
       lighter: '#CAFDF5',
       light: '#61F3F3',
-      main: '#00B8D9',
+      main: '#1c75ee',
       dark: '#006C9C',
       darker: '#003768',
       contrastText: '#FFFFFF',
@@ -46,7 +46,7 @@ export const themeConfig = {
     success: {
       lighter: '#D3FCD2',
       light: '#77ED8B',
-      main: '#22C55E',
+      main: '#04c142',
       dark: '#118D57',
       darker: '#065E49',
       contrastText: '#ffffff',
@@ -62,7 +62,7 @@ export const themeConfig = {
     error: {
       lighter: '#FFE9D5',
       light: '#FFAC82',
-      main: '#FF5630',
+      main: '#ff4949',
       dark: '#B71D18',
       darker: '#7A0916',
       contrastText: '#FFFFFF',

@@ -1,26 +1,26 @@
-import { varAlpha } from 'minimal-shared/utils';
-
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
-import { CONFIG } from 'src/global-config';
 
 // ----------------------------------------------------------------------
 
 export function AppCards() {
   return (
-      <Box sx={{display: 'flex', flexDirection: 'column', gap: '20px'}}><Box sx={{display:'flex', gap:'20px'}}>
+    <Box sx={{display: 'flex', flexDirection: 'column', gap: '20px'}}><Box sx={{display:'flex', gap:'20px'}}>
       <Box
         sx={{
-            borderRadius: .5,
-            display: 'flex',
-            flexDirection: 'column',
-            color: 'common.white',
-            textAlign: 'left',
-            width: "25%",
-            backgroundColor: "#0090ff"
-          }}
+          position: "relative",
+          borderRadius: .5,
+          display: 'flex',
+          flexDirection: 'column',
+          color: 'common.white',
+          textAlign: 'left',
+          width: "25%",
+          minHeight: "120px",
+          backgroundColor: "#2b7ae7"
+        }}
       >
+        <Typography variant="h2" sx={{position: 'absolute', right: 30, top: 10 }} fontWeight="light" color="#00000030">P</Typography>
+        
         <Box
           sx={{
             display: 'flex',
@@ -34,25 +34,27 @@ export function AppCards() {
           </Typography>
   
           <Typography variant="h4">
-            99474990000 $
+            99474990000 <i className="fa fa-try"></i>
           </Typography>
         </Box>
         
-        <Box sx={{display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1}}>
+        <Box sx={{position:"absolute", bottom: 0, display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1, width: 1}}>
             <Typography variant="body2">My point</Typography>
         </Box>
       </Box>
       
       <Box
         sx={{
-            borderRadius: .5,
-            display: 'flex',
-            flexDirection: 'column',
-            color: 'common.white',
-            textAlign: 'left',
-            width: "25%",
-            backgroundColor: "#e040ff"
-          }}
+          position: "relative",
+          borderRadius: .5,
+          display: 'flex',
+          flexDirection: 'column',
+          color: 'common.white',
+          textAlign: 'left',
+          width: "25%",
+          minHeight: "120px",
+          backgroundColor: "#c675fd"
+        }}
       >
         <Box
           sx={{
@@ -67,26 +69,30 @@ export function AppCards() {
           </Typography>
   
           <Typography variant="h4">
-            0 $
+            0 <i className="fa fa-try"></i>
           </Typography>
         </Box>
         
-        <Box sx={{display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1}}>
+        <Box sx={{position:"absolute", bottom: 0, display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1, width: 1}}>
             <Typography variant="body2">My Profit of Day</Typography>
         </Box>
       </Box>
       
       <Box
         sx={{
-            borderRadius: .5,
-            display: 'flex',
-            flexDirection: 'column',
-            color: 'common.white',
-            textAlign: 'left',
-            width: "25%",
-            backgroundColor: "#00ccff"
-          }}
+          position: "relative",
+          borderRadius: .5,
+          display: 'flex',
+          flexDirection: 'column',
+          color: 'common.white',
+          textAlign: 'left',
+          width: "25%",
+          minHeight: "120px",
+          backgroundColor: "#1ec9f5"
+        }}
       >
+        <Typography variant="h2" sx={{position: 'absolute', right: 30, top: 10 }} fontWeight="light" color="#00000030"><i className="fa fa-user"></i></Typography>
+      
         <Box
           sx={{
             display: 'flex',
@@ -104,21 +110,23 @@ export function AppCards() {
           </Typography>
         </Box>
         
-        <Box sx={{display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1}}>
+        <Box sx={{position:"absolute", bottom: 0, display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1, width: 1}}>
             <Typography variant="body2">My Users</Typography>
         </Box>
       </Box>
       
       <Box
         sx={{
-            borderRadius: .5,
-            display: 'flex',
-            flexDirection: 'column',
-            color: 'common.white',
-            textAlign: 'left',
-            width: "25%",
-            backgroundColor: "#ff0090"
-          }}
+          position: "relative",
+          borderRadius: .5,
+          display: 'flex',
+          flexDirection: 'column',
+          color: 'common.white',
+          textAlign: 'left',
+          width: "25%",
+          minHeight: "120px",
+          backgroundColor: "#f11886"
+        }}
       >
         <Box
           sx={{
@@ -128,6 +136,8 @@ export function AppCards() {
             p: 2
           }}
         >
+          <Typography variant="h2" sx={{position: 'absolute', right: 30, top: 10 }} fontWeight="light" color="#00000030"><i className="fa fa-info-circle"></i></Typography>
+        
           <Typography variant="caption">
             Providers / Games
           </Typography>
@@ -137,7 +147,7 @@ export function AppCards() {
           </Typography>
         </Box>
         
-        <Box sx={{display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1}}>
+        <Box sx={{position:"absolute", bottom: 0, display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1, width: 1}}>
             <Typography variant="body2">Providers / Games</Typography>
         </Box>
       </Box>
@@ -146,15 +156,19 @@ export function AppCards() {
           <Box sx={{display:'flex', gap:'20px'}}>
     <Box
       sx={{
-          borderRadius: .5,
-          display: 'flex',
-          flexDirection: 'column',
-          color: 'common.white',
-          textAlign: 'left',
-          width: "25%",
-          backgroundColor: "#0090ff"
-        }}
+        position: "relative",
+        borderRadius: .5,
+        display: 'flex',
+        flexDirection: 'column',
+        color: 'common.white',
+        textAlign: 'left',
+        width: "25%",
+        minHeight: "120px",
+        backgroundColor: "#2b7ae7"
+      }}
     >
+      <Typography variant="h2" sx={{position: 'absolute', right: 30, top: 10 }} fontWeight="light" color="#00000030">P</Typography>
+
       <Box
         sx={{
           display: 'flex',
@@ -168,25 +182,27 @@ export function AppCards() {
         </Typography>
 
         <Typography variant="h4">
-          324828816.81 $
+          324828816.81 <i className="fa fa-try"></i>
         </Typography>
       </Box>
       
-      <Box sx={{display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1}}>
+      <Box sx={{position:"absolute", bottom: 0, display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1, width: 1}}>
           <Typography variant="body2">Sub(Total) point</Typography>
       </Box>
     </Box>
     
     <Box
       sx={{
-          borderRadius: .5,
-          display: 'flex',
-          flexDirection: 'column',
-          color: 'common.white',
-          textAlign: 'left',
-          width: "25%",
-          backgroundColor: "#e040ff"
-        }}
+        position: "relative",
+        borderRadius: .5,
+        display: 'flex',
+        flexDirection: 'column',
+        color: 'common.white',
+        textAlign: 'left',
+        width: "25%",
+        minHeight: "120px",
+        backgroundColor: "#c675fd"
+      }}
     >
       <Box
         sx={{
@@ -201,26 +217,30 @@ export function AppCards() {
         </Typography>
 
         <Typography variant="h4">
-          2097381.97 $
+          2097381.97 <i className="fa fa-try"></i>
         </Typography>
       </Box>
       
-      <Box sx={{display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1}}>
+      <Box sx={{position:"absolute", bottom: 0, display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1, width: 1}}>
           <Typography variant="body2">Sub(Total) Profit of Day</Typography>
       </Box>
     </Box>
     
     <Box
       sx={{
-          borderRadius: .5,
-          display: 'flex',
-          flexDirection: 'column',
-          color: 'common.white',
-          textAlign: 'left',
-          width: "25%",
-          backgroundColor: "#00ccff"
-        }}
+        position: "relative",
+        borderRadius: .5,
+        display: 'flex',
+        flexDirection: 'column',
+        color: 'common.white',
+        textAlign: 'left',
+        width: "25%",
+        minHeight: "120px",
+        backgroundColor: "#1ec9f5"
+      }}
     >
+      <Typography variant="h2" sx={{position: 'absolute', right: 30, top: 10 }} fontWeight="light" color="#00000030"><i className="fa fa-users"></i></Typography>
+
       <Box
         sx={{
           display: 'flex',
@@ -238,22 +258,26 @@ export function AppCards() {
         </Typography>
       </Box>
       
-      <Box sx={{display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1}}>
+      <Box sx={{position:"absolute", bottom: 0, display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1, width: 1}}>
           <Typography variant="body2">Users</Typography>
       </Box>
     </Box>
     
     <Box
       sx={{
-          borderRadius: .5,
-          display: 'flex',
-          flexDirection: 'column',
-          color: 'common.white',
-          textAlign: 'left',
-          width: "25%",
-          backgroundColor: "#ff0090"
-        }}
+        position: "relative",
+        borderRadius: .5,
+        display: 'flex',
+        flexDirection: 'column',
+        color: 'common.white',
+        textAlign: 'left',
+        width: "25%",
+        minHeight: "120px",
+        backgroundColor: "#f11886"
+      }}
     >
+      <Typography variant="h2" sx={{position: 'absolute', right: 30, top: 10 }} fontWeight="light" color="#00000030"><i className="fa fa-sitemap"></i></Typography>
+
       <Box
         sx={{
           display: 'flex',
@@ -271,7 +295,7 @@ export function AppCards() {
         </Typography>
       </Box>
       
-      <Box sx={{display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1}}>
+      <Box sx={{position:"absolute", bottom: 0, display:"flex", justifyContent:"flex-end", backgroundColor: "rgba(0,0,0,.6)", p: 1, width: 1}}>
           <Typography variant="body2">Agents</Typography>
       </Box>
     </Box>

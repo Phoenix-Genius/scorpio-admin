@@ -8,6 +8,7 @@ import { DashboardContent } from 'src/layouts/dashboard/content';
 import { PageTitle } from 'src/components/page-title/page-title';
 import { Block } from 'src/components/block';
 import { useCallback, useState } from "react";
+import { _user_bonus_calls } from "src/_mock";
 
 
 // ----------------------------------------------------------------------
@@ -82,10 +83,6 @@ const columns = [
     )
   },
 ];
-
-const histroys = [
-  { id: 4910, game: "Gates of Olympus", user: { name: "NFL39842", loginId: "demoagent" }, total: "0/10", date: "22 Oct 2019", winAmount: "$885" }, { id: 4909, game: "Gates of Olympus", user: { name: "Richard Payne", loginId: "demoagent" }, total: "10/10", date: "08 Mar 2022", winAmount: "$889" }, { id: 4908, game: "Sugar Rush 1000", user: { name: "Jennifer Summers", loginId: "demoagent" }, total: "5/10", date: "21 Oct 2020", winAmount: "$870" }, { id: 4907, game: "Sugar Rush 1000", user: { name: "Mr.Justin Richardson", loginId: "demoagent" }, total: "0/10", date: "23 Mar 2021", winAmount: "" }, { id: 4906, game: "Sugar Rush 1000", user: { name: "NFL39842", loginId: "demoagent" }, total: "6/10", date: "26 Aug 2019", winAmount: "" }, { id: 4905, game: "Sugar Rush 1000", user: { name: "NFL39842", loginId: "demoagent" }, total: "0/10", date: "24 Oct 2022", winAmount: "-$231" }, { id: 4904, game: "Gates of Olympus", user: { name: "NFL39842", loginId: "demoagent" }, total: "0/10", date: "21 Oct 2025", winAmount: "" }, { id: 4903, game: "Gates of Olympus", user: { name: "NFL39842", loginId: "demoagent" }, total: "4/10", date: "26 Aug 2020", winAmount: "$880" }, { id: 4902, game: "Big Bass Splash", user: { name: "NFL39842", loginId: "demoagent" }, total: "0/10", date: "23 Jan 2025", winAmount: "$883" }, { id: 4901, game: "Big Bass Splash", user: { name: "NFL39842", loginId: "demoagent" }, total: "8/10", date: "24 Jan 2022", winAmount: "" }, { id: 4900, game: "Gates of Olympus", user: { name: "NFL39842", loginId: "demoagent" }, total: "0/10", date: "26 Oct 2019", winAmount: "" }
-]
 
 const providers = ["@baalbet", "CQ9", "Habanero", "JiLi", "DreamGaming", "Asia Gaming"];
 const gamenames = ["The Dog Hose Megaways", "Gates of Olympus", "Sugar Rush 1000", "Big Bass Splash"];
@@ -180,7 +177,7 @@ export function BonusCallHistory() {
       </Box>
 
       <DataGrid
-        rows={histroys}
+        rows={_user_bonus_calls}
         columns={columns}
         initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
         pageSizeOptions={[5, 10, 20]}

@@ -51,7 +51,7 @@ function verticalVars(theme) {
     // sub
     '--nav-item-sub-height': '36px',
     // icon
-    '--nav-icon-size': '24px',
+    '--nav-icon-size': '20px',
     '--nav-icon-margin': '0 12px 0 0',
     // bullet
     '--nav-bullet-size': '12px',

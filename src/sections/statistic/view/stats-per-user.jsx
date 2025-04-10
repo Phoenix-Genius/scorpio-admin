@@ -12,6 +12,7 @@ import { MobileDatePicker } from "@mui/x-date-pickers";
 import dayjs from 'dayjs';
 import { LocalizationProvider } from 'src/locales';
 import { formatNumber } from "src/utils/format-number";
+import { _statistic_user } from "src/_mock";
 
 // ----------------------------------------------------------------------
 
@@ -92,42 +93,6 @@ const columns = [
   },
 ];
 
-const statsPerUser = [{ id: 56240, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56241, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56242, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56243, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56244, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56245, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56246, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56247, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56248, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56249, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56250, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56251, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56252, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56253, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56254, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56255, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56256, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56257, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56258, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56259, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56260, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56261, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56262, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56263, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56264, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56265, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56266, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56267, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56268, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56269, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56270, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56271, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56272, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-{ id: 56273, parent: { name: "baalbet", loginId: "@Baalbet" }, betting: { prev: 0, curr: 0 }, win: { prev: 0, curr: 0 }, profit: { prev: 0, curr: 0 }, bonusCall: 0 },
-]
-
 const providers = ["@baalbet", "CQ9", "Habanero", "JiLi", "DreamGaming", "Asia Gaming"]
 
 
@@ -191,9 +156,9 @@ export function StatisticsPerUser() {
         </Grid>
       </Block>
 
-      <Block title={`Stats Per User (Total:${statsPerUser.length})`}>
+      <Block title={`Stats Per User (Total:${_statistic_user.length})`}>
         <DataGrid
-          rows={statsPerUser}
+          rows={_statistic_user}
           columns={columns}
           initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
           pageSizeOptions={[5, 10, 20]}

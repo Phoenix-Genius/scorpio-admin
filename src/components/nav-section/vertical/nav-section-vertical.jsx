@@ -7,11 +7,6 @@ import { useTheme } from '@mui/material/styles';
 import { NavList } from './nav-list';
 import { Nav, NavUl, NavLi, NavSubheader } from '../components';
 import { navSectionClasses, navSectionCssVars } from '../styles';
-// import { Divider } from '@mui/material';
-// import { NavItem } from '../horizontal/nav-item';
-// import { paths } from 'src/routes/paths';
-// import { CONFIG } from 'src/global-config';
-// import { SvgColor } from 'src/components/svg-color/svg-color';
 
 // ----------------------------------------------------------------------
 
@@ -37,14 +32,6 @@ export function NavSectionVertical({
       {...other}
     >
       <NavUl sx={{ flex: '1 1 auto', gap: 'var(--nav-item-gap)' }}>
-
-        {/* <Divider sx={{ my: 2 }} />
-        <NavItem
-          path={paths.dashboard.setting}
-          icon={<SvgColor src={`${CONFIG.assetsDir}/assets/icons/navbar/ic-user.svg`} />}
-          title="Setting"
-        />
-        <Divider sx={{ my: 2 }} /> */}
 
         {data.map((group) => (
           <Group

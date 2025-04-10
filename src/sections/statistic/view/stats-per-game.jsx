@@ -11,6 +11,7 @@ import { useCallback, useState } from "react";
 import { MobileDatePicker } from "@mui/x-date-pickers";
 import dayjs from 'dayjs';
 import { LocalizationProvider } from 'src/locales';
+import { _statistic_game } from "src/_mock";
 
 // ----------------------------------------------------------------------
 
@@ -66,39 +67,6 @@ const columns = [
     headerAlign: 'center'
   },
 ];
-
-const statsPerGame = [
-  { id: 1, provider: "total", gameName: "Myth", symbol: "smile", betting: 234, win: 235345, profit: 2346456, bonusCall: 0 },
-  { id: 2, provider: "total", gameName: "Dota", symbol: "smile", betting: 234, win: 235345, profit: 2346456, bonusCall: 0 },
-  { id: 3, provider: "total", gameName: "Mussang", symbol: "smile", betting: 234, win: 235345, profit: 89567, bonusCall: 0 },
-  { id: 4, provider: "total", gameName: "Miracle", symbol: "smile", betting: 234, win: 235345, profit: 2347, bonusCall: 0 },
-  { id: 5, provider: "total", gameName: "Critical", symbol: "smile", betting: 234, win: 235345, profit: 345, bonusCall: 0 },
-  { id: 6, provider: "total", gameName: "Alarm", symbol: "smile", betting: 234, win: 235345, profit: 43257, bonusCall: 0 },
-  { id: 7, provider: "total", gameName: "tetris", symbol: "smile", betting: 234, win: 235345, profit: 3245, bonusCall: 0 },
-  { id: 8, provider: "total", gameName: "tetris", symbol: "smile", betting: 234, win: 235345, profit: 3753, bonusCall: 0 },
-  { id: 9, provider: "haha", gameName: "tetris", symbol: "smile", betting: 234, win: 235345, profit: 247345, bonusCall: 0 },
-  { id: 10, provider: "good", gameName: "Cavern", symbol: "smile", betting: 234, win: 235345, profit: 5768, bonusCall: 0 },
-  { id: 11, provider: "cool", gameName: "Forever", symbol: "smile", betting: 234, win: 235345, profit: 855, bonusCall: 0 },
-  { id: 12, provider: "sertfsd", gameName: "catchme", symbol: "smile", betting: 8798, win: 438, profit: 3451435, bonusCall: 0 },
-  { id: 13, provider: "aert", gameName: "Zuma", symbol: "smile", betting: 234, win: 235345, profit: 2346456, bonusCall: 0 },
-  { id: 14, provider: "consert", gameName: "Zuma", symbol: "smile", betting: 980, win: 5674546, profit: 45, bonusCall: 0 },
-  { id: 15, provider: "quantity", gameName: "Zuma", symbol: "smile", betting: 45, win: 567, profit: 89, bonusCall: 0 },
-  { id: 16, provider: "sub", gameName: "Zuma", symbol: "smile", betting: 234, win: 456, profit: 327547, bonusCall: 0 },
-  { id: 17, provider: "sup", gameName: "Zuma", symbol: "smile", betting: 234, win: 45827, profit: 428526, bonusCall: 0 },
-  { id: 18, provider: "some", gameName: "Zuma", symbol: "smile", betting: 234, win: 42687, profit: 57, bonusCall: 0 },
-  { id: 19, provider: "total", gameName: "ttc", symbol: "smile", betting: 234, win: 235345, profit: 2346456, bonusCall: 0 },
-  { id: 20, provider: "total", gameName: "tetris", symbol: "smile", betting: 234, win: 235345, profit: 2346456, bonusCall: 0 },
-  { id: 21, provider: "total", gameName: "tetris", symbol: "smile", betting: 234, win: 248, profit: 2346456, bonusCall: 0 },
-  { id: 22, provider: "total", gameName: "tetris", symbol: "smile", betting: 234, win: 235345, profit: 547, bonusCall: 0 },
-  { id: 23, provider: "total", gameName: "tetris", symbol: "smile", betting: 234, win: 235345, profit: 2346456, bonusCall: 0 },
-  { id: 24, provider: "total", gameName: "tetris", symbol: "smile", betting: 234, win: 235345, profit: 2346456, bonusCall: 0 },
-  { id: 25, provider: "total", gameName: "tetris", symbol: "smile", betting: 234, win: 235345, profit: 2346456, bonusCall: 0 },
-  { id: 26, provider: "total", gameName: "tetris", symbol: "smile", betting: 234, win: 235345, profit: 2346456, bonusCall: 0 },
-  { id: 27, provider: "total", gameName: "tetris", symbol: "smile", betting: 234, win: 235345, profit: 2346456, bonusCall: 0 },
-  { id: 28, provider: "total", gameName: "tetris", symbol: "smile", betting: 234, win: 235345, profit: 2346456, bonusCall: 0 },
-  { id: 29, provider: "total", gameName: "tetris", symbol: "smile", betting: 234, win: 235345, profit: 2346456, bonusCall: 0 },
-  { id: 30, provider: "total", gameName: "tetris", symbol: "smile", betting: 234, win: 235345, profit: 2346456, bonusCall: 0 },
-]
 
 const agents = ["@baalbet", "CQ9", "Habanero", "JiLi", "DreamGaming", "Asia Gaming"];
 const providers = ["Total", "CQ9", "Habanero", "JiLi", "DreamGaming", "Asia Gaming"];
@@ -177,9 +145,9 @@ export function StatisticsPerGame() {
         </Grid>
       </Block>
 
-      <Block title={`Stats Per Game (Total:${statsPerGame.length})`}>
+      <Block title={`Stats Per Game (Total:${_statistic_game.length})`}>
         <DataGrid
-          rows={statsPerGame}
+          rows={_statistic_game}
           columns={columns}
           initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
           pageSizeOptions={[5, 10, 20]}

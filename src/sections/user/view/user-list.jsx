@@ -12,6 +12,7 @@ import { MobileDatePicker } from "@mui/x-date-pickers";
 import dayjs from 'dayjs';
 import { LocalizationProvider } from 'src/locales';
 import { formatNumber } from "src/utils/format-number";
+import { _users } from "src/_mock";
 
 // ----------------------------------------------------------------------
 
@@ -83,14 +84,6 @@ const columns = [
   },
 ];
 
-const userList = [
-  { id: 1, user: { name: "1277870", loginId: "400634252" }, parent: { name: "sub_partner2", loginId: "subpartner2" }, balance: 0.25, createdAt: "2025-01-09T00:47:37" },
-  { id: 2, user: { name: "1277870", loginId: "400634252" }, parent: { name: "sub_partner2", loginId: "subpartner2" }, balance: 0.25, createdAt: "2025-01-09T00:47:37" },
-  { id: 3, user: { name: "1277870", loginId: "400634252" }, parent: { name: "sub_partner2", loginId: "subpartner2" }, balance: 0.25, createdAt: "2025-01-09T00:47:37" },
-  { id: 4, user: { name: "1277870", loginId: "400634252" }, parent: { name: "sub_partner2", loginId: "subpartner2" }, balance: 0.25, createdAt: "2025-01-09T00:47:37" },
-  { id: 5, user: { name: "1277870", loginId: "400634252" }, parent: { name: "sub_partner2", loginId: "subpartner2" }, balance: 0.25, createdAt: "2025-01-09T00:47:37" }
-]
-
 const providers = ["@baalbet", "CQ9", "Habanero", "JiLi", "DreamGaming", "Asia Gaming"]
 
 export function UserList() {
@@ -153,14 +146,14 @@ export function UserList() {
         </Grid>
       </Block>
 
-      <Block title={`User List (Total ${userList.length})`}>
+      <Block title={`User List (Total ${_users.length})`}>
         <Box sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
           <Alert sx={{ borderRadius: 0, backgroundColor: "#b3b3b3", color: "black" }} icon={<i className="icmn-checkmark" style={{ color: "black" }}></i>}>
             In the case of a seamless wallet method, the balabce amount is not colleted separately when the user ends the game. It is maintained as the last balance, so please use it as a reference.
           </Alert>
         </Box>
         <DataGrid
-          rows={userList}
+          rows={_users}
           columns={columns}
           initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
           pageSizeOptions={[5, 10, 20]}
