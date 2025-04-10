@@ -1,12 +1,13 @@
 "use client"
 
 import { DataGrid } from "@mui/x-data-grid";
-import { Box, Button, TextField, Typography } from '@mui/material';
+import { Alert, Box, Button, TextField, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import { Label } from 'src/components/label';
 import { DashboardContent } from 'src/layouts/dashboard/content';
 import { PageTitle } from 'src/components/page-title/page-title';
 import { Block } from 'src/components/block';
+import { formatNumber } from "src/utils/format-number";
 
 // ----------------------------------------------------------------------
 
@@ -83,7 +84,11 @@ const columns = [
     width: 100,
     align: 'center',
     headerAlign: 'center',
-    renderCell: params => <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: 1 }}><Typography>{params.row.roundBet}$</Typography></Box>
+    renderCell: params => (
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: 1 }}>
+        <Typography>{formatNumber(params.row.roundBet)} <i className="fa fa-try"></i></Typography>
+      </Box>
+    )
   },
   {
     field: 'totalBet',
@@ -91,7 +96,11 @@ const columns = [
     width: 100,
     align: 'center',
     headerAlign: 'center',
-    renderCell: params => <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: 1 }}><Typography>{params.row.totalBet}$</Typography></Box>
+    renderCell: params => (
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: 1 }}>
+        <Typography>{formatNumber(params.row.totalBet)} <i className="fa fa-try"></i></Typography>
+      </Box>
+    )
   },
   {
     field: 'totalWin',
@@ -99,7 +108,11 @@ const columns = [
     width: 100,
     align: 'center',
     headerAlign: 'center',
-    renderCell: params => <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: 1 }}><Typography>{params.row.totalWin}$</Typography></Box>
+    renderCell: params => (
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: 1 }}>
+        <Typography>{formatNumber(params.row.totalWin)} <i className="fa fa-try"></i></Typography>
+      </Box>
+    )
   },
   {
     field: 'profit',
@@ -107,7 +120,11 @@ const columns = [
     width: 100,
     align: 'center',
     headerAlign: 'center',
-    renderCell: params => <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: 1 }}><Typography>{params.row.profit}$</Typography></Box>
+    renderCell: params => (
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: 1 }}>
+        <Typography>{formatNumber(params.row.profit)} <i className="fa fa-try"></i></Typography>
+      </Box>
+    )
   },
   {
     field: 'startTime',
@@ -123,7 +140,11 @@ const columns = [
     width: 100,
     align: 'center',
     headerAlign: 'center',
-    renderCell: params => <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: 1 }}><Typography>{params.row.callAmount}$</Typography></Box>
+    renderCell: params => (
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: 1 }}>
+        <Typography>{formatNumber(params.row.callAmount)} <i className="fa fa-try"></i></Typography>
+      </Box>
+    )
   },
   {
     field: 'callState',
@@ -140,87 +161,89 @@ const columns = [
     headerAlign: 'center',
     renderCell: params => (
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px", height: 1 }}>
-        <Button variant="contained" color="success">Bonus Call</Button>
-        <Button variant="contained" color="info">Transaction</Button>
+        <Button variant="contained" size="small" color="success">Bonus Call</Button>
+        <Button variant="contained" size="small" color="info">Transaction</Button>
       </Box>
     )
   },
 ];
 
-const gameConnections=[
-  {id:1,user:{name:"1277870", loginId:"400634252"},parent:{name:"sub_partner2", loginId:"subpartner2"},provider:"pragmatic play",name:"Lusky's Wild Pub",symbol:"vs10bbdice",category:"Slots",roundBet:0.25,totalBet:0.5,totalWin:0,profit:"-0.5",startTime:"2025-01-09T00:47:37",callAmount:0,callState:""},
-  {id:2,user:{name:"1277870", loginId:"400634252"},parent:{name:"sub_partner2", loginId:"subpartner2"},provider:"CQ9",name:"Big Bass Dice",symbol:"vs25luckwikdpb",category:"Slots",roundBet:0.25,totalBet:0.5,totalWin:0,profit:"-0.5",startTime:"2025-01-09T00:47:37",callAmount:0,callState:""},
-  {id:3,user:{name:"1277870", loginId:"400634252"},parent:{name:"sub_partner2", loginId:"subpartner2"},provider:"Pocket Games Soft",name:"The Dog House",symbol:"vs10bbdice",category:"Slots",roundBet:0.25,totalBet:0.5,totalWin:0,profit:"-0.5",startTime:"2025-01-09T00:47:37",callAmount:0,callState:""},
-  {id:4,user:{name:"1277870", loginId:"400634252"},parent:{name:"sub_partner2", loginId:"subpartner2"},provider:"Booongo",name:"Wild Wild Jocker",symbol:"vssefgergth",category:"Slots",roundBet:0.25,totalBet:0.5,totalWin:0,profit:"-0.5",startTime:"2025-01-09T00:47:37",callAmount:0,callState:""},
-  {id:5,user:{name:"1277870", loginId:"400634252"},parent:{name:"sub_partner2", loginId:"subpartner2"},provider:"CQ9",name:"Lusky's Wild Pub",symbol:"vs1tkyjftjyj",category:"Slots",roundBet:0.25,totalBet:0.5,totalWin:0,profit:"-0.5",startTime:"2025-01-09T00:47:37",callAmount:0,callState:""}
-  ]
+const gameConnections = [
+  { id: 1, user: { name: "1277870", loginId: "400634252" }, parent: { name: "sub_partner2", loginId: "subpartner2" }, provider: "pragmatic play", name: "Lusky's Wild Pub", symbol: "vs10bbdice", category: "Slots", roundBet: 0.25, totalBet: 0.5, totalWin: 0, profit: "-0.5", startTime: "2025-01-09T00:47:37", callAmount: 0, callState: "" },
+  { id: 2, user: { name: "1277870", loginId: "400634252" }, parent: { name: "sub_partner2", loginId: "subpartner2" }, provider: "CQ9", name: "Big Bass Dice", symbol: "vs25luckwikdpb", category: "Slots", roundBet: 0.25, totalBet: 0.5, totalWin: 0, profit: "-0.5", startTime: "2025-01-09T00:47:37", callAmount: 0, callState: "" },
+  { id: 3, user: { name: "1277870", loginId: "400634252" }, parent: { name: "sub_partner2", loginId: "subpartner2" }, provider: "Pocket Games Soft", name: "The Dog House", symbol: "vs10bbdice", category: "Slots", roundBet: 0.25, totalBet: 0.5, totalWin: 0, profit: "-0.5", startTime: "2025-01-09T00:47:37", callAmount: 0, callState: "" },
+  { id: 4, user: { name: "1277870", loginId: "400634252" }, parent: { name: "sub_partner2", loginId: "subpartner2" }, provider: "Booongo", name: "Wild Wild Jocker", symbol: "vssefgergth", category: "Slots", roundBet: 0.25, totalBet: 0.5, totalWin: 0, profit: "-0.5", startTime: "2025-01-09T00:47:37", callAmount: 0, callState: "" },
+  { id: 5, user: { name: "1277870", loginId: "400634252" }, parent: { name: "sub_partner2", loginId: "subpartner2" }, provider: "CQ9", name: "Lusky's Wild Pub", symbol: "vs1tkyjftjyj", category: "Slots", roundBet: 0.25, totalBet: 0.5, totalWin: 0, profit: "-0.5", startTime: "2025-01-09T00:47:37", callAmount: 0, callState: "" }
+]
 
 export function GameConnections() {
 
-    return (
-      <DashboardContent maxWidth="xl">
-        <PageTitle>Game Connections</PageTitle>
-        <Block title="Filter">
-          <Grid container sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
-            <Grid size={6} container sx={{ p: 2, borderRight: "1px solid #333", borderBottom: "1px solid #333" }}>
-              <Grid size={4} sx={{ display: "flex", alignItems: "center" }}>
-                <Typography variant="subtitle1">Users</Typography>
-              </Grid>
-              <Grid size={8} sx={{ borderLeft: "1px solid #333", pl: 2 }}>
+  return (
+    <DashboardContent maxWidth="xl">
+      <PageTitle>Game Connections</PageTitle>
+      <Block title="Filter">
+        <Grid container sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
+          <Grid size={6} container sx={{ p: 2, borderRight: "1px solid #333", borderBottom: "1px solid #333" }}>
+            <Grid size={4} sx={{ display: "flex", alignItems: "center" }}>
+              <Typography variant="subtitle1">Users</Typography>
+            </Grid>
+            <Grid size={8} sx={{ borderLeft: "1px solid #333", pl: 2 }}>
               <TextField fullWidth size="small" placeholder="Users" />
-              </Grid>
-            </Grid>
-            <Grid size={6} container sx={{ p: 2, borderBottom: "1px solid #333" }}>
-              <Grid size={4} sx={{ display: "flex", alignItems: "center" }}>
-                <Typography variant="subtitle1">Parent</Typography>
-              </Grid>
-              <Grid size={8} sx={{ borderLeft: "1px solid #333", pl: 2 }}>
-                <TextField fullWidth size="small" placeholder="Parent" />
-              </Grid>
             </Grid>
           </Grid>
-          <Grid container sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
-            <Grid size={6} container sx={{ p: 2, borderRight: "1px solid #333", borderBottom: "1px solid #333" }}>
-              <Grid size={4} sx={{ display: "flex", alignItems: "center" }}>
-                <Typography variant="subtitle1">Provider</Typography>
-              </Grid>
-              <Grid size={8} sx={{ borderLeft: "1px solid #333", pl: 2 }}>
+          <Grid size={6} container sx={{ p: 2, borderBottom: "1px solid #333" }}>
+            <Grid size={4} sx={{ display: "flex", alignItems: "center" }}>
+              <Typography variant="subtitle1">Parent</Typography>
+            </Grid>
+            <Grid size={8} sx={{ borderLeft: "1px solid #333", pl: 2 }}>
+              <TextField fullWidth size="small" placeholder="Parent" />
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid container sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
+          <Grid size={6} container sx={{ p: 2, borderRight: "1px solid #333", borderBottom: "1px solid #333" }}>
+            <Grid size={4} sx={{ display: "flex", alignItems: "center" }}>
+              <Typography variant="subtitle1">Provider</Typography>
+            </Grid>
+            <Grid size={8} sx={{ borderLeft: "1px solid #333", pl: 2 }}>
               <TextField fullWidth size="small" placeholder="Provider" />
-              </Grid>
-            </Grid>
-            <Grid size={6} container sx={{ p: 2, borderBottom: "1px solid #333" }}>
-              <Grid size={4} sx={{ display: "flex", alignItems: "center" }}>
-                <Typography variant="subtitle1">Game Name</Typography>
-              </Grid>
-              <Grid size={8} sx={{ borderLeft: "1px solid #333", pl: 2 }}>
-                <TextField fullWidth size="small" placeholder="Game Name" />
-              </Grid>
             </Grid>
           </Grid>
-          <Grid container sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
-            <Grid size={6} container sx={{ p: 2, borderRight: "1px solid #333", borderBottom: "1px solid #333" }}>
-              <Grid size={4} sx={{ display: "flex", alignItems: "center" }}>
-                <Typography variant="subtitle1">Symbol</Typography>
-              </Grid>
-              <Grid size={8} sx={{ borderLeft: "1px solid #333", pl: 2 }}>
+          <Grid size={6} container sx={{ p: 2, borderBottom: "1px solid #333" }}>
+            <Grid size={4} sx={{ display: "flex", alignItems: "center" }}>
+              <Typography variant="subtitle1">Game Name</Typography>
+            </Grid>
+            <Grid size={8} sx={{ borderLeft: "1px solid #333", pl: 2 }}>
+              <TextField fullWidth size="small" placeholder="Game Name" />
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid container sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
+          <Grid size={6} container sx={{ p: 2, borderRight: "1px solid #333", borderBottom: "1px solid #333" }}>
+            <Grid size={4} sx={{ display: "flex", alignItems: "center" }}>
+              <Typography variant="subtitle1">Symbol</Typography>
+            </Grid>
+            <Grid size={8} sx={{ borderLeft: "1px solid #333", pl: 2 }}>
               <TextField fullWidth size="small" placeholder="Symbol" />
-              </Grid>
             </Grid>
-            <Grid size={6} container sx={{ p: 2, borderBottom: "1px solid #333" }}></Grid>
           </Grid>
-        </Block>
-        
-        <Block title={`Game Connections (${gameConnections.length} / ${gameConnections.length})`}>
-          <Box sx={{ backgroundColor: "#ccc", p: 2 }}>
-            <Typography variant="subtitle2" color="black">Data is automatically updated every 10 seconds.</Typography>
-          </Box>
-          <DataGrid
-            rows={gameConnections}
-            columns={columns}
-            initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
-            pageSizeOptions={[5, 10, 20]}
-          />
-        </Block>
-      </DashboardContent>
-    ) 
+          <Grid size={6} container sx={{ p: 2, borderBottom: "1px solid #333" }}></Grid>
+        </Grid>
+      </Block>
+
+      <Block title={`Game Connections (${gameConnections.length} / ${gameConnections.length})`}>
+        <Box sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
+          <Alert sx={{ borderRadius: 0, backgroundColor: "#b3b3b3", color: "black" }} icon={<i className="icmn-checkmark" style={{ color: "black" }}></i>}>
+            Data is automatically updated every 10 seconds.
+          </Alert>
+        </Box>
+        <DataGrid
+          rows={gameConnections}
+          columns={columns}
+          initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
+          pageSizeOptions={[5, 10, 20]}
+        />
+      </Block>
+    </DashboardContent>
+  )
 }
