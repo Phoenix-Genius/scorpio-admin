@@ -13,7 +13,7 @@ import { detectSettings } from 'src/components/settings/server';
 import { SettingsDrawer, defaultSettings, SettingsProvider } from 'src/components/settings';
 
 import { AuthProvider } from 'src/auth/context/jwt';
-
+import { CurrencyProvider } from 'src/contexts/currencyContext';
 // ----------------------------------------------------------------------
 
 export const viewport = {
@@ -66,18 +66,20 @@ export default async function RootLayout({ children }) {
             cookieSettings={appConfig.cookieSettings}
             defaultSettings={defaultSettings}
           >
-            <AppRouterCacheProvider options={{ key: 'css' }}>
-              <ThemeProvider
-                defaultMode={themeConfig.defaultMode}
-                modeStorageKey={themeConfig.modeStorageKey}
-              >
-                <MotionLazy>
-                  <ProgressBar />
-                  <SettingsDrawer defaultSettings={defaultSettings} />
-                  {children}
-                </MotionLazy>
-              </ThemeProvider>
-            </AppRouterCacheProvider>
+            <CurrencyProvider>
+              <AppRouterCacheProvider options={{ key: 'css' }}>
+                <ThemeProvider
+                  defaultMode={themeConfig.defaultMode}
+                  modeStorageKey={themeConfig.modeStorageKey}
+                >
+                  <MotionLazy>
+                    <ProgressBar />
+                    <SettingsDrawer defaultSettings={defaultSettings} />
+                    {children}
+                  </MotionLazy>
+                </ThemeProvider>
+              </AppRouterCacheProvider>
+            </CurrencyProvider>
           </SettingsProvider>
         </AuthProvider>
       </body>

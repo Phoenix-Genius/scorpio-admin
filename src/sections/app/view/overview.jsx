@@ -1,7 +1,6 @@
 'use client';
 
 import { DashboardContent } from 'src/layouts/dashboard';
-
 import { Divider, Stack } from '@mui/material';
 import { AppCards } from '../app-cards';
 import { ChartColumnMultiple } from '../chart-column-multiple';
@@ -26,7 +25,7 @@ export function Overview() {
                 { name: 'pv', data: [2100, 1600, 9600, 3800, 4700, 4000, 4200] },
                 { name: 'uv', data: [9900, 7700, 5000, 6500, 4600, 5800, 8600] },
               ],
-              colors: ["#0090ff", "#00ccff"]
+              colors: ['#0090ff', '#00ccff'],
             }}
           />
         </section>

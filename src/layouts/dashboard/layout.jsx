@@ -36,13 +36,14 @@ import { dashboardLayoutVars, dashboardNavColorVars } from './css-vars';
 import { NotificationsDrawer } from '../components/notifications-drawer';
 import { Typography } from '@mui/material';
 
+import { useCurrency } from 'src/contexts/currencyContext';
 // ----------------------------------------------------------------------
 
 export function DashboardLayout({ sx, cssVars, children, slotProps, layoutQuery = 'lg' }) {
   const theme = useTheme();
 
   const settings = useSettingsContext();
-
+  const { currency, setCurrency } = useCurrency();
   const navVars = dashboardNavColorVars(theme, settings.state.navColor, settings.state.navLayout);
 
   const { value: open, onFalse: onClose, onTrue: onOpen } = useBoolean();
@@ -105,12 +106,21 @@ export function DashboardLayout({ sx, cssVars, children, slotProps, layoutQuery 
       rightArea: (
         <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 0, sm: 0.75 } }}>
           {/** @slot Currency popover */}
-          <CurrencyPopover data={[
-            { id: 1, value: '99,474,990,000', currency: 'TRY', unit: <i className="fa fa-try"></i> },
-            { id: 2, value: '15,215,215,000', currency: 'USD', unit: '$' },
-            { id: 3, value: '15,215,215,000', currency: 'EUR', unit: '€' },
-            { id: 4, value: '15,215,215,000', currency: 'GBP', unit: '£' }
-          ]} />
+          <CurrencyPopover
+            selected={currency} // 'TRY' | 'USD' | 'EUR' | 'GBP'
+            onSelect={setCurrency}
+            data={[
+              {
+                id: 'TRY',
+                value: '99,474,990,000',
+                currency: 'TRY',
+                unit: <i className="fa fa-try" />,
+              },
+              { id: 'USD', value: '15,215,215,000', currency: 'USD', unit: '$' },
+              { id: 'EUR', value: '15,215,215,000', currency: 'EUR', unit: '€' },
+              { id: 'GBP', value: '15,215,215,000', currency: 'GBP', unit: '£' },
+            ]}
+          />
 
           {/** @slot Notifications popover */}
           <NotificationsDrawer data={_notifications} />
@@ -119,7 +129,7 @@ export function DashboardLayout({ sx, cssVars, children, slotProps, layoutQuery 
           <LanguagePopover
             data={[
               { value: 'en', label: 'English', countryCode: 'GB' },
-              { value: 'tr', label: 'Turkish', countryCode: 'TR' }
+              { value: 'tr', label: 'Turkish', countryCode: 'TR' },
             ]}
           />
 
@@ -159,7 +169,13 @@ export function DashboardLayout({ sx, cssVars, children, slotProps, layoutQuery 
     />
   );
 
-  const renderFooter = () => <Box sx={{ p: 2, borderTop: "1px solid rgba(255,255,255,.2)" }}><Typography variant="subtitle2">Copyright &copy; SLOTCITY Admin Corp. All Rights Reserved.</Typography></Box>;
+  const renderFooter = () => (
+    <Box sx={{ p: 2, borderTop: '1px solid rgba(255,255,255,.2)' }}>
+      <Typography variant="subtitle2">
+        Copyright &copy; SLOTCITY Admin Corp. All Rights Reserved.
+      </Typography>
+    </Box>
+  );
 
   const renderMain = () => <MainSection {...slotProps?.main}>{children}</MainSection>;
 
